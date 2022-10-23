@@ -42,19 +42,3 @@ $('#btGuardar').click(function () {
         }
     }
 });
-
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-var dni = "";
-function obtenerUsuario() {
-    dni = getParameterByName('usuario');
-    alert("Usuario: " + dni);
-    var nombre = obtenerNombreUsuario(dni);
-    var inNombre = $('#inNombre');
-    inNombre.val(nombre);
-}

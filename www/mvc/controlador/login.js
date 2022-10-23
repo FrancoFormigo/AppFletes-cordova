@@ -32,9 +32,9 @@ $('#btIngresar').click(function () {
             if (res_validar_ingreso == "3") {
                 alert("Ingreso correcto!");
                 if (rol == "Fletero")
-                    window.location.href = '../vista/menu_fletero.html?rol=' + rol;
+                    window.location.href = '../vista/menu_fletero.html?usuario=' + usuario;
                 else
-                    window.location.href = '../vista/menu_cliente.html?rol=' + rol;
+                    window.location.href = '../vista/menu_cliente.html?usuario=' + usuario;
             } else {
                 alert("Error!");
             }

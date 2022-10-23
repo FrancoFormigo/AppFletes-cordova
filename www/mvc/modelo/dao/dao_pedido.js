@@ -13,21 +13,23 @@
 // Retorna una "señal" con el resultado del acceso al servidor y el 
 // mismo DTO recibido como parametro con la informacion (si habia)
 //
-function cliente_crea_pedido(dtoPedido) {
+function cliente_crea_pedido(dtoPedido, dtoCliente) {
     //Define la variable para responder si crea o no el pedido.
     //  Los valores posibles son "er" (error de conexion), "" (no creo el pedido),
     //  "ok" (creo el pedido)
     var resp_creacion_pedido = "";
     //Obtiene el dni del objeto recibido como parametro	
+    dni = dtoCliente.getDni;
     peso = dtoPedido.getPeso;
     origen = dtoPedido.getOrigen;
     destino = dtoPedido.getDestino;
     //Pregunta si es numerico o vacio
-    if (peso == "" || origen == "" || destino == "") {
+    if (dni == "" || peso == "" || origen == "" || destino == "") {
 
     } else {
         //Arma el "post" para enviarlo por ajax
         var parametros = {
+            "Dni": dni,
             "Peso": peso,
             "Origen": origen,
             "Destino": destino,
@@ -50,6 +52,7 @@ function cliente_crea_pedido(dtoPedido) {
     }
     return resp_creacion_pedido;
 }
+
 
 function respuestaNoRecibida(jqXHR, textStatus) {
     //Informa el error, esto es solo de prueba, ya que se recuerda que el modelo

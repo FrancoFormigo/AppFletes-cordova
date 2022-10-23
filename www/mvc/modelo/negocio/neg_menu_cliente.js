@@ -17,9 +17,12 @@
 // "1" si no los encontro o con "4" si se produjo un error. Si encontro
 // retorna el arreglo con los roles disponibles
 //
-function crearPedido(peso, origen, destino) {
+function crearPedido(dni, peso, origen, destino) {
 	var pedido_creacion = new DtoPedido();
+	var cliente_creador = new DtoUsuario();
 
+	cliente_creador.setDni = dni;
+	alert(cliente_creador.getDni);
 	pedido_creacion.setPeso = peso;
 	pedido_creacion.setOrigen = origen;
 	pedido_creacion.setDestino = destino;
@@ -28,7 +31,7 @@ function crearPedido(peso, origen, destino) {
 	var resp_creacion_pedido = "";
 	//Llama a la "dao" para que acceda al webservice 
 	//Envia el idUsuario y el objeto de tipo Array como parametro y recibe una String
-	resp_creacion_pedido = cliente_crea_pedido(pedido_creacion);
+	resp_creacion_pedido = cliente_crea_pedido(pedido_creacion, cliente_creador);
 	//	alert (resp_leer_roles);
 	//Si no se pudo conectar retorna "4"
 	if (resp_creacion_pedido == "er") {
