@@ -6,7 +6,7 @@
 // puede ser necesario ampliarla si se implementa con un menu real,
 // este solamente tiene previsto mostrar el menu y finalizar.
 // 
-new pedido_creacion = new pedidoDto();
+
 // Funcion destinada a obtener los roles habilitados para el usuario
 // que ingresa al menu
 //
@@ -18,6 +18,7 @@ new pedido_creacion = new pedidoDto();
 // retorna el arreglo con los roles disponibles
 //
 function crearPedido(peso, origen, destino) {
+	var pedido_creacion = new DtoPedido();
 
 	pedido_creacion.setPeso = peso;
 	pedido_creacion.setOrigen = origen;
@@ -31,7 +32,7 @@ function crearPedido(peso, origen, destino) {
 	//	alert (resp_leer_roles);
 	//Si no se pudo conectar retorna "4"
 	if (resp_creacion_pedido == "er") {
-		return "3";
+		return "4";
 	}
 	//Si no se pudo leer retorna "1"
 	if (resp_creacion_pedido != "ok") {
@@ -40,7 +41,6 @@ function crearPedido(peso, origen, destino) {
 		return "2";
 	}
 }
-
 /*function mostrarMenuAdecuado(dtoUsuario) {
 	//Define una variable para recibir la respuesta de la lectura	
 	var resp_leer_rol = "";

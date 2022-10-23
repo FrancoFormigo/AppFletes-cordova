@@ -44,16 +44,16 @@ function cliente_crea_pedido(dtoPedido) {
             },
             error: function (jqXHR, textStatus, errorMessage) {
                 respuestaNoRecibida(jqXHR, textStatus);
-                resp_creacion_pedido="er";
+                resp_creacion_pedido = "er";
             }
         });
     }
     return resp_creacion_pedido;
+}
 
-    //resp_leer_pedido = respuesta['estado'];
-                //Completa la informacion del DTO con la respuesta del servidor
-                //dtoPedido.setId = respuesta['Id'];
-                //dtoUsuario.setPeso = respuesta['Peso'];
-                //dtoUsuario.setOrigen = respuesta['Origen'];
-                //dtoUsuario.setDestino = respuesta['Destino'];
+function respuestaNoRecibida(jqXHR, textStatus) {
+    //Informa el error, esto es solo de prueba, ya que se recuerda que el modelo
+    //no debe tener contacto con la vista	
+    alert("Error de conexion, intente mas tarde");
+    alert(textStatus + jqXHR.status);
 }

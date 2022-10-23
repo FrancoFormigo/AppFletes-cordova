@@ -2,8 +2,6 @@
 // Logica de negocio correspondiente a la ventana "login".
 // Su funcion es la de nexo entre el controlador y las daos. 
 // 
-
-
 //Crea una variable global, instancia de DtoUsuario
 var usu_ingreso = new DtoUsuario();
 

@@ -1,54 +1,38 @@
-
-// Controlador de la ventana que visualiza el menu principal
-// del sistema
-
-//Estilos datos por jquery a un objeto de la vista
-document.getElementById('diRol').align = "center";
 // Definicion de variables globales
 var dni_logueado = "";
 var idUsuario = "";
 var rol = "";
 
 // Boton actualizar datos (abre la ventana para tal fin)
-$('#btCrearPedido').click( function () {
-
-	
+$('#btCrearPedido').click(function () {
 	var inPeso = $('#inPeso');
-    var peso = inPeso.val().trim();
-    inPeso.val(peso);
+	var peso = inPeso.val().trim();
+	inPeso.val(peso);
 
-    var inOrigen = $('#inOrigen');
-    var origen = inOrigen.val().trim();
-    inOrigen.val(origen);
+	var inOrigen = $('#inOrigen');
+	var origen = inOrigen.val().trim();
+	inOrigen.val(origen);
 
-    var inDestino = $("inDestino");
-    var destino = inDestino.val().trim();
-    inDestino.val(destino);
+	var inDestino = $('#inDestino');
+	var destino = inDestino.val().trim();
+	inDestino.val(destino);
 
-    alert(peso, origen, destino);
-    var res_creacion_pedido = crearPedido(peso, origen, destino);
-    if (res_creacion_pedido == "1") {
-        alert("No se pudo crear el pedido!");
-    } else {
-        if (res_creacion_pedido == "2") {
-            alert("Se creo el pedido!");
-        } else {
-            if (res_creacion_pedido == "3") {
-                alert("ERROR");
-            } else {
-                alert("Error!");
-            }
-        }
-    }
-})
-
-
-
-
-
-
-
-
+	alert(peso + origen + destino);
+	var res_creacion_pedido = crearPedido(peso, origen, destino);
+	if (res_creacion_pedido == "1") {
+		alert("No se pudo crear el pedido!");
+	} else {
+		if (res_creacion_pedido == "2") {
+			alert("Se creo el pedido!");
+		} else {
+			if (res_creacion_pedido == "3") {
+				alert("ERROR");
+			} else {
+				alert("Error!");
+			}
+		}
+	}
+});
 
 // Boton retornar
 $('#btRetornar').click(retornar);
@@ -121,4 +105,4 @@ function getParameterByName(name) {
 function obtenerUsuario() {
 	dni_logueado = getParameterByName('usuario');
 	idUsuario = getParameterByName('id');
-} diRol
+}
