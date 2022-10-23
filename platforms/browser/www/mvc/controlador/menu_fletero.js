@@ -4,7 +4,6 @@
 
 //Estilos datos por jquery a un objeto de la vista
 document.getElementById('diRol').align = "center";
-
 // Definicion de variables globales
 var dni_logueado = "";
 var idUsuario = "";
