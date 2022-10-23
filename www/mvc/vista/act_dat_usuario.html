@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="../../jquery/jquery.mobile-1.4.5.min.css">
+    <script type="text/javascript" src="../../jquery/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery.mobile-1.4.5.min.js"></script>
+    <title>Actualizacion de datos de Usuarios</title>
+</head>
+
+<body onload="obtenerUsuario()">
+    <div id="pgLogin" data-role="page">
+        <div data-role="header">
+            <h1>Actualizacion de datos</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <form style="text-align: center; margin: auto;">
+
+                <label id="lbNombre">Nombre:</label>
+                <input type="text" id="inNombre" value="">
+                <br>
+                <input type="radio" id="fletero" name="inRol" value="Fletero"> Fletero
+                <input type="radio" id="cliente" name="inRol" value="Cliente"> Cliente
+                <br>
+                <label id="lbContrasenaActual">Contraseña actual:</label>
+                <input type="password" id="inContrasenaActual" value="">
+                <br>
+                <label id="lbContrasenaNueva">Contraseña nueva:</label>
+                <input type="password" id="inContrasenaNueva" value="">
+                <br>
+                <label id="lbContrasenaReingresada">Reingrese contraseña:</label>
+                <input type="password" id="inContrasenaReingresada" value="">
+                <br><br><br>
+            </form>
+            <div id="div_lyBotones" style="text-align: center; margin: auto;">
+                <button id="btGuardar" class="ui-btn">Guardar</button>
+                <br><br>
+                <button id="btRetornar" class="ui-btn">Retornar</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../controlador/act_dat_usuario.js"></script>
+    <script type="text/javascript" src="../modelo/negocio/neg_act_dat_usuario.js"></script>
+    <script type="text/javascript" src="../modelo/dto/dto_usuario.js"></script>
+    <script type="text/javascript" src="../modelo/dao/dao_usuario.js"></script>
+    <script type="text/javascript" src="../modelo/utilidades/uti_sha256.js"></script>
+    <script type="text/javascript" src="../../cordova.js"></script>
+
+</body>
+
+</html>

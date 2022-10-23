@@ -1,0 +1,18 @@
+{
+    "android":{
+        "debug":{
+            "keystore": "clave.keystore",
+            "storePassword": "iesc9233",
+            "alias": "clave",
+            "password": "iesc9233",
+            "keystoreType": ""
+        },
+        "release": {
+            "keystore": "clave.keystore",
+            "storePassword": "iesc9233",
+            "alias": "clave",
+            "password": "iesc9233",
+            "keystoreType": ""
+        }
+    }
+}
