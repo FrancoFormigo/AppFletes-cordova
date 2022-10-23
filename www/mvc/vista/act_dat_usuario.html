@@ -8,6 +8,11 @@
     <script type="text/javascript" src="../../jquery/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="../../jquery/jquery.mobile-1.4.5.min.js"></script>
     <title>Actualizacion de datos de Usuarios</title>
+    <style>
+        input.inRol {
+            display: flex;
+        }
+    </style>
 </head>
 
 <body onload="obtenerUsuario()">
@@ -23,7 +28,7 @@
                 <br>
                 <input type="radio" id="fletero" name="inRol" value="Fletero"> Fletero
                 <input type="radio" id="cliente" name="inRol" value="Cliente"> Cliente
-                <br>
+                <br><br>
                 <label id="lbContrasenaActual">Contraseña actual:</label>
                 <input type="password" id="inContrasenaActual" value="">
                 <br>

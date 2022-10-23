@@ -26,7 +26,7 @@ $('#btGuardar').click(function () {
     var contrasenaReingresada = inContrasenaReingresada.val().trim();
     inContrasenaReingresada.val(contrasenaReingresada);
 
-    var res_validar_ingreso = validar_ingreso(dni, nombre, rol, contrasenaActual, contrasenaNueva, contrasenaReingresada);
+    var res_validar_ingreso = validar_ingreso(dni, nombre, contrasenaActual, rol, contrasenaNueva, contrasenaReingresada);
     if (res_validar_ingreso == "1") {
         alert("Ingreso Incorrecto!");
         alert(contrasenaNueva + contrasenaActual + nombre);

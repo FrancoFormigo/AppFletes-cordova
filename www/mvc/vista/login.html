@@ -8,6 +8,11 @@
     <script type="text/javascript" src="../../jquery/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="../../jquery/jquery.mobile-1.4.5.min.js"></script>
     <title>Ingreso de Usuarios</title>
+    <style>
+        .rol {
+            display: inline-grid;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,8 +28,11 @@
                 <label id="lbContrasena">Contraseña:</label>
                 <input type="password" id="inContrasena" value="">
                 <br>
-                <input type="radio" id="fletero" name="inRol" value="Fletero"> Fletero
-                <input type="radio" id="cliente" name="inRol" value="Cliente"> Cliente<br><br>
+                <div class="rol">
+                    <input type="radio" id="fletero" name="inRol" value="Fletero"><br> Fletero
+                    <input type="radio" id="cliente" name="inRol" value="Cliente"><br> Cliente
+                </div>
+                <br><br>
             </form>
             <div id="div_lyBotones" style="text-align: center; margin: auto;">
                 <button id="btIngresar" class="ui-btn">Ingresar</button>

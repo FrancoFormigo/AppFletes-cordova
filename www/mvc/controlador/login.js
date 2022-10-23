@@ -1,5 +1,6 @@
 // Para probar correcto funcionamiento de alguna linea insertar dentro de la funcion
 // alert("funciona");
+document.getElementsByName('inRol').align = "center";
 
 $('#btSalir').click(function () {
     navigator.app.exitApp();
@@ -30,6 +31,10 @@ $('#btIngresar').click(function () {
         } else {
             if (res_validar_ingreso == "3") {
                 alert("Ingreso correcto!");
+                if (rol == "Fletero")
+                    window.location.href = '../vista/menu_fletero.html?rol=' + rol;
+                else
+                    window.location.href = '../vista/menu_cliente.html?rol=' + rol;
             } else {
                 alert("Error!");
             }

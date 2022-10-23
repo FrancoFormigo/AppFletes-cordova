@@ -1,0 +1,53 @@
+﻿<!-- Esta ventana es la correspondiente al menu de opciones del sistema
+	 Dado que esta aplicacion es solo un ejemplo de ingreso y creacion
+	 de usuarios no contendra las opciones propias del sistema.
+-->
+
+<!DOCTYPE html>
+<html>
+<!-- Cabecera -->
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<!-- Archivos de cordova, jquery y jquery mobile incluidos antes del body para que tome los estilos
+	 desde que se arranca la vista-->
+	<link rel="stylesheet" href="../../jquery/jquery.mobile-1.4.5.min.css">
+	<script type="text/javascript" src="../../jquery/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="../../jquery/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="../../cordova.js"></script>
+	<title>Menu principal</title>
+</head>
+<!-- Cuerpo -->
+
+<body onload="inicializarVentana()">
+	<div data-role="page" id="pgMenu">
+		<div data-role="header">
+			<h1>Menú principal</h1>
+			<h1 id="h1Usuario"></h1>
+			<form>
+				<div id="diRol">
+					<select name="seRol" id="seRol">
+					</select>
+				</div>
+			</form>
+		</div>
+		<div data-role="main" class="ui-content">
+			<br />
+			<div id="div_lyBotones">
+				<button class="ui-btn" id="btCrearPedido">Crear Pedido</button>
+				<br />
+				<button class="ui-btn" id="btActualizarDatos">Actualizar Datos</button>
+				<br />
+				<button class="ui-btn" id="btRetornar">Retornar</button>
+			</div>
+		</div>
+	</div>
+	<!-- Archivos correspondientes al controlador y modelo -->
+	<script type="text/javascript" src="../controlador/menu_sistema.js"></script>
+	<script type="text/javascript" src="../modelo/negocio/neg_menu_sistema.js"></script>
+	<script type="text/javascript" src="../modelo/dto/dto_usuario_rol.js"></script>
+	<script type="text/javascript" src="../modelo/dao/dao_usuario_rol.js"></script>
+</body>
+
+</html>

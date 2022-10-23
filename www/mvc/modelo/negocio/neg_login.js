@@ -45,10 +45,10 @@ function validar_ingreso(dni, contrasena, rol) {
             return "1";
         } else {
             //Si la contraseña es igual al dni retorna "2"
-            if (dni != contrasena) {
+            if (dni == contrasena) {
                 return "2";
             } else {
-                if (rol_ingreso.getRol == "Fletero" || rol_ingreso.getRol == "Cliente") {
+                if (usu_ingreso.getRol == "Fletero" || usu_ingreso.getRol == "Cliente") {
                     return "3";
                 }
             }
