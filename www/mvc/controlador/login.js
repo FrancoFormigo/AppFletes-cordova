@@ -22,6 +22,9 @@ $('#btIngresar').click(function () {
 
     //alert(usuario + contrasena + rol);
     var res_validar_ingreso = validar_ingreso(usuario, contrasena, rol);
+
+    alert(res_validar_ingreso);
+
     if (res_validar_ingreso == "1") {
         alert("Ingreso Incorrecto!");
     } else {
@@ -29,15 +32,13 @@ $('#btIngresar').click(function () {
             alert("Ingreso Correcto!");
             window.location.href = '../vista/act_dat_usuario.html?usuario=' + usuario;
         } else {
-            if (res_validar_ingreso == "3") {
-                alert("Ingreso correcto!");
-                if (rol == "Fletero")
-                    window.location.href = '../vista/menu_fletero.html?usuario=' + usuario;
-                else
-                    window.location.href = '../vista/menu_cliente.html?usuario=' + usuario;
-            } else {
-                alert("Error!");
+            if (res_validar_ingreso == "5") {
+                window.location.href = '../vista/menu_fletero.html?usuario=' + usuario;
             }
+            if (res_validar_ingreso == "3") {
+                window.location.href = '../vista/menu_cliente.html?usuario=' + usuario;
+            }
+            else { alert("Error!"); }
         }
     }
 });

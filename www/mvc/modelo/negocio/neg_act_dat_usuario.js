@@ -131,9 +131,11 @@ function validar_ingreso(dni, nombre, contrasenaActual, rol, contrasenaNueva, co
 		var resp_mod_usuario = "";
 		resp_mod_usuario = modif_por_id(usu_ingreso);
 		if (resp_mod_usuario == "ok") {
-			return "2";
-		} else {
-			return "3";
+			if (usu_ingreso.getRol == "Fletero") {
+				return "3"
+			} else if (usu_ingreso.getRol == "Cliente") {
+				return "2"
+			}
 		}
 	}
 }
