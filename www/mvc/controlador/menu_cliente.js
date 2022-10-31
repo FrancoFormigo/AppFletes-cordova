@@ -1,7 +1,3 @@
-// Definicion de variables globales
-var dni_logueado = "";
-var idUsuario = "";
-var rol = "";
 
 // Boton actualizar datos (abre la ventana para tal fin)
 $('#btCrearPedido').click(function () {
@@ -41,7 +37,7 @@ function retornar() {
 }
 
 // Boton actualizar datos (abre la ventana para tal fin)
-$('#btActualizarDatos').click(actualizarDatos);
+$('#btMostrarPedidos').click(actualizarDatos);
 function actualizarDatos() {
 	window.location.href = '../vista/act_dat_usuario.html?usuario=' + obtenerUsuario();
 }

@@ -44,21 +44,25 @@ function crearPedido(dni, peso, origen, destino) {
 		return "2";
 	}
 }
-/*function mostrarMenuAdecuado(dtoUsuario) {
-	//Define una variable para recibir la respuesta de la lectura	
-	var resp_leer_rol = "";
+
+function listarPedidosDeCliente(dni) {
+	var cliente = new DtoUsuario();
+	var listaPedidos = [];
+	cliente.setDni = dni;
+
+	var susPedidos = "";
 	//Llama a la "dao" para que acceda al webservice 
 	//Envia el idUsuario y el objeto de tipo Array como parametro y recibe una String
-	resp_leer_rol = leer_por_dni(dtoUsuario);
+	susPedidos = cliente_crea_pedido(cliente, listaPedidos);
 	//	alert (resp_leer_roles);
 	//Si no se pudo conectar retorna "4"
-	if (resp_leer_rol == "er") {
+	if (susPedidos == "er") {
 		return "4";
 	}
 	//Si no se pudo leer retorna "1"
-	if (resp_leer_rol != "ok") {
+	if (susPedidos != "ok") {
 		return "1";
 	} else {
 		return "2";
 	}
-}*/
+}

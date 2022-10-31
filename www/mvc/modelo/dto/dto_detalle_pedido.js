@@ -1,10 +1,4 @@
-
-// "DTO" destinada a transportar los datos correspondientes a
-// la tabla "Pedidos" del modelo. 
-// Las columnas de la tabla son "id", "peso", "origen" y "destino"
-// Contiene los metodos "set" y "get" para las 4 variables
-// 
-class DtoPedido {
+class DtoDetallePedido {
     constructor(setId = 0, setPeso = 0,
         setOrigen = '', setDestino = '',) {
         this.id = setId;
@@ -25,16 +19,9 @@ class DtoPedido {
         this.origen = origen;
     }
 
+
     set setDestino(destino) {
         this.destino = destino;
-    }
-
-    set setFletero(fletero) {
-        this.fletero = fletero;
-    }
-
-    get getFletero() {
-        return this.fletero;
     }
 
     get getId() {
