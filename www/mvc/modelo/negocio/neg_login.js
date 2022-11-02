@@ -45,9 +45,9 @@ function validar_ingreso(dni, contrasena, rol) {
             //Si la contraseña es igual al dni retorna "2"
             if (dni == contrasena && usu_ingreso.getRol == rol) {
                 return "2";
-            } else if (usu_ingreso.getRol == rol) {
+            } else if (usu_ingreso.getRol == "Cliente" && usu_ingreso.getRol == rol) {
                 return "3";
-            } else if (usu_ingreso.getRol == rol)
+            } else if (usu_ingreso.getRol == "Fletero" && usu_ingreso.getRol == rol)
                 return "5";
         }
     }

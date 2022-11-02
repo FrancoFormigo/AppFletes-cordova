@@ -16,14 +16,59 @@
 	<script type="text/javascript" src="../../jquery/jquery-2.2.3.min.js"></script>
 	<script type="text/javascript" src="../../jquery/jquery.mobile-1.4.5.min.js"></script>
 	<script type="text/javascript" src="../../cordova.js"></script>
-	<title>Menu principal</title>
+	<title>Menu fletero</title>
 </head>
 <!-- Cuerpo -->
 
 <body onload="obtenerUsuario()">
 	<div data-role="page" id="pgMenu">
 		<div data-role="header">
-			<h1>Menú principal</h1>
+			<h1>Menú fletero</h1>
+		</div>
+		<div style="border: 1pt solid; text-align: center;">
+			Mis pedidos tomados
+			<table border="1px" align="center">
+				<tr>
+				<th id="clPedido"> Pedido </th>
+				<th id="clOrigen"> Origen </th>
+				<th id="clDestino"> Destino </th>
+				<th id="clPeso"> Peso </th>
+				<th id="clTelefono"> Telefono </th>
+				</tr>
+				
+				<tr>
+				<td id="fiPedido"> *1* </td>
+				<td id="fiOrigen"> *4 de enero 2222* </td>
+				<td id="fiDestino"> *Mendoza 4444* </td>
+				<td id="fiPeso"> *45* </td>
+				<td id="fiTelefono"> *3437494085* </td>
+				</tr>
+				
+			</table>
+		</div>
+		<br>
+		<div style="border: 1pt solid; text-align: center;">
+			Pedidos de clientes
+			<table border="1px" align="center">
+				<tr>
+				<th id="clPedido"> Pedido </th>
+				<th id="clOrigen"> Origen </th>
+				<th id="clDestino"> Destino </th>
+				<th id="clPeso"> Peso </th>
+				<th id="clTelefono"> Telefono </th>
+				<th id=""></th>
+				</tr>
+				
+				<tr>
+				<td id="fiPedido"> *1* </td>
+				<td id="fiOrigen"> *4 de enero 2222* </td>
+				<td id="fiDestino"> *Mendoza 4444* </td>
+				<td id="fiPeso"> *45* </td>
+				<td id="fiTelefono"> *3437494085* </td>
+				<td id="" style="background-color: green;"><button></button></td>
+				</tr>
+				
+			</table>
 		</div>
 		<div data-role="main" class="ui-content">
 			<br />
