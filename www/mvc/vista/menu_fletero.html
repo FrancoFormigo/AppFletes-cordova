@@ -47,28 +47,27 @@
 			</table>
 		</div>
 		<br>
-		<div style="border: 1pt solid; text-align: center;">
-			Pedidos de clientes
-			<table border="1px" align="center">
-				<tr>
-				<th id="clPedido"> Pedido </th>
-				<th id="clOrigen"> Origen </th>
-				<th id="clDestino"> Destino </th>
-				<th id="clPeso"> Peso </th>
-				<th id="clTelefono"> Telefono </th>
-				<th id=""></th>
-				</tr>
-				
-				<tr>
-				<td id="fiPedido"> *1* </td>
-				<td id="fiOrigen"> *4 de enero 2222* </td>
-				<td id="fiDestino"> *Mendoza 4444* </td>
-				<td id="fiPeso"> *45* </td>
-				<td id="fiTelefono"> *3437494085* </td>
-				<td id="" style="background-color: green;"><button></button></td>
-				</tr>
-				
-			</table>
+		<div class="container">
+			<div class="section">
+				<button id="btListarPedidosClientes" class="ui-btn">Pedidos de Clientes</button>
+
+				<table border="1px" align="center">
+					<thead>
+						<tr>
+						<th id="clPedido"> Pedido </th>
+						<th id="clOrigen"> Origen </th>
+						<th id="clDestino"> Destino </th>
+						<th id="clPeso"> Peso </th>
+						<th id="clTelefono"> Telefono </th>
+						<th id=""></th>
+						</tr>
+					</thead>
+					<tbody id="res">
+						
+					</tbody>
+					
+				</table>
+			</div>
 		</div>
 		<div data-role="main" class="ui-content">
 			<br />
@@ -81,6 +80,8 @@
 	<script type="text/javascript" src="../modelo/negocio/neg_menu_fletero.js"></script>
 	<script type="text/javascript" src="../modelo/dto/dto_detalle_pedido.js"></script>
 	<script type="text/javascript" src="../modelo/dao/dao_usuario.js"></script>
+	<script type="text/javascript" src="../modelo/dao/dao_pedido.js"></script>
+	<script type="text/javascript" src="../modelo/dto/dto_pedido.js"></script>
 </body>
 
 </html>

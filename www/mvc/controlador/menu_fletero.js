@@ -81,3 +81,29 @@ function obtenerUsuario() {
 	dni_logueado = getParameterByName('usuario');
 	idUsuario = getParameterByName('id');
 } diRol
+
+document.querySelector('#btListarPedidosClientes').addEventListener('click', listarPedidos);
+function listarPedidos(){
+	const res_obtener_pedidos = obtenerPedidos();
+
+	res_obtener_pedidos.onreadystatechange = function(){
+		let pedidos = JSON.parse(res_obtener_pedidos);
+
+		let res = document.querySelector('#res');
+		res.innerHTML = '';
+
+		for(let item of pedidos){
+			res.innerHTML += `
+				<tr>
+					<td id="fiPedido">${item.Id}</td>
+					<td id="fiOrigen">${item.Origen}</td>
+					<td id="fiDestino">${item.Destino}</td>
+					<td id="fiPeso">${item.Peso}</td>
+					<td id="fiTelefono">${item.Telefono}</td>
+					<td id="" style="background-color: green;"><button></button></td>
+				</tr>
+			`
+		}
+	}
+
+}

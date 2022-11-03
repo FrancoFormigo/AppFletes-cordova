@@ -6,6 +6,8 @@
 // es invocar mediante "ajax" a scripts php para cada accion a 
 // realizar.
 
+//const { functions } = require("underscore");
+
 // Funcion destinada a crear un pedido.
 //
 // Recibe como parametro un "DTO" dentro del cual se encuentran los datos del pedido.
@@ -100,4 +102,26 @@ function leer_pedidos_de_cliente(dtoCliente) {
         });
     }
     return resp_leer_usuario;
+}
+
+function obtenerPedidosClientes(){
+    //Invoca a la url donde se encuentra el archivo "usuario_leer_por_dni.php"
+    $.ajax({
+        type: 'get',
+        dataType: 'json',
+        async: false,
+        url: 'https://proyectos-franco.000webhostapp.com/Usuarios/usuario_leer_por_dni.php',
+        success: function (respuesta) {
+            resp_obtener_pedidos_clientes = respuesta;
+            //Completa la informacion del DTO con la respuesta del servidor
+        },
+        error: function (jqXHR, textStatus, errorMessage) {
+            respuestaNoRecibida(jqXHR, textStatus);
+            resp_leer_usuario = "er";
+        }
+    });
+    alert("Estoy en obtener pedidos clientes DAO");
+    var prueba = [{"estado":"" ,"Id":"1","Origen":"4 de enero 222","Destino":"San Martin 555","Peso":"32","Telefono":"33434343434"},{"estado":"" ,"Id":"2","Origen":"Mendoza 222","Destino":"Hipolito 555","Peso":"51","Telefono":"003402321243"}]
+    return prueba;
+    //return resp_obtener_pedidos_clientes;
 }

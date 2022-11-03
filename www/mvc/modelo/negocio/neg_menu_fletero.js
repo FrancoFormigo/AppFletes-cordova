@@ -55,3 +55,21 @@ function mostrarMenuAdecuado(dtoUsuario) {
 	}
 }
 
+function obtenerPedidos() { 
+	//Llama a la "dao" para que acceda al webservice 
+	//Envia el idUsuario y el objeto de tipo Array como parametro y recibe una String
+	var respuesta = obtenerPedidosClientes();
+	//	alert (resp_leer_roles);
+	//Si no se pudo conectar retorna "4"
+	if (respuesta['estado'] == "er") {
+		return "4";
+	}
+	//Si no se pudo leer retorna "1"
+	if (respuesta['estado'] != "ok") {
+		return "1";
+	} else {
+		alert("Estoy en obtener pedidos NEGOCIO volviendo de dao");
+		return respuesta;
+	}
+}
+
