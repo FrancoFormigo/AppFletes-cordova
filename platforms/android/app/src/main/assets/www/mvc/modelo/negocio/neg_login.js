@@ -2,8 +2,6 @@
 // Logica de negocio correspondiente a la ventana "login".
 // Su funcion es la de nexo entre el controlador y las daos. 
 // 
-
-
 //Crea una variable global, instancia de DtoUsuario
 var usu_ingreso = new DtoUsuario();
 
@@ -45,13 +43,12 @@ function validar_ingreso(dni, contrasena, rol) {
             return "1";
         } else {
             //Si la contraseña es igual al dni retorna "2"
-            if (dni == contrasena) {
+            if (dni == contrasena && usu_ingreso.getRol == rol) {
                 return "2";
-            } else {
-                if (usu_ingreso.getRol == "Fletero" || usu_ingreso.getRol == "Cliente") {
-                    return "3";
-                }
-            }
+            } else if (usu_ingreso.getRol == "Cliente" && usu_ingreso.getRol == rol) {
+                return "3";
+            } else if (usu_ingreso.getRol == "Fletero" && usu_ingreso.getRol == rol)
+                return "5";
         }
     }
 }

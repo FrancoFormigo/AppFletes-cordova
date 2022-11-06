@@ -4,35 +4,45 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <link rel="stylesheet" href="../../jquery/jquery.mobile-1.4.5.min.css">
+    <!-- <link rel="stylesheet" href="../../jquery/jquery.mobile-1.4.5.min.css"> -->
+    <link rel="stylesheet" href="../../estilos/style.css">
     <script type="text/javascript" src="../../jquery/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="../../jquery/jquery.mobile-1.4.5.min.js"></script>
-    <title>Ingreso de Usuarios</title>
-    <style>
-        .rol {
-            display: inline-grid;
-        }
-    </style>
+
+    <title>Login - Fletes</title>
 </head>
 
 <body>
-    <div id="pgLogin" data-role="page">
-        <div data-role="header">
-            <h1>Ingreso al sistema</h1>
+    <div data-role="page" id="login-page" class="page">
+        <div class="nav-bar">
+            <h1>Login</h1>
         </div>
-        <div data-role="main" class="ui-content">
-            <form style="text-align: center; margin: auto;">
-                <label id="lbUsuario">Usuario:</label>
-                <input type="text" id="inUsuario" value="">
-                <br>
-                <label id="lbContrasena">Contraseña:</label>
-                <input type="password" id="inContrasena" value="">
-                <br>
-                <div class="rol">
-                    <input type="radio" id="fletero" name="inRol" value="Fletero"><br> Fletero
-                    <input type="radio" id="cliente" name="inRol" value="Cliente"><br> Cliente
+        <div class="logo">
+            <img src="../../img/fletes.png" alt="">
+        </div>
+        <div class="container">
+            <form class="register-form">
+                <div class="data-form">
+                    <div class="in-form data">
+                        <div class="in-form-1">
+                            <label id="lbUsuario">Usuario</label><br>
+                            <input type="text" id="inUsuario" value="">
+                        </div>
+                        <div class="in-form-1">
+                            <label id="lbContrasena">Contraseña</label><br>
+                            <input type="password" id="inContrasena" value="">
+                        </div>
+                    </div>
+
+                    <div class="rol-form">
+                        <div class="in-form rol">
+                            <input type="radio" id="fletero" name="inRol" value="Fletero"><br> Fletero
+                        </div>
+                        <div class="in-form rol">
+                            <input type="radio" id="cliente" name="inRol" value="Cliente"><br> Cliente
+                        </div>
+                    </div>
                 </div>
-                <br><br>
             </form>
             <div id="div_lyBotones" style="text-align: center; margin: auto;">
                 <button id="btIngresar" class="ui-btn">Ingresar</button>
@@ -41,13 +51,13 @@
             </div>
         </div>
     </div>
+
+    <!-- Scripts------- -->
     <script type="text/javascript" src="../controlador/login.js"></script>
     <script type="text/javascript" src="../modelo/dto/dto_usuario.js"></script>
     <script type="text/javascript" src="../modelo/negocio/neg_login.js"></script>
     <script type="text/javascript" src="../modelo/dao/dao_usuario.js"></script>
     <script type="text/javascript" src="../modelo/utilidades/uti_sha256.js"></script>
-    <!-- <script type="text/javascript" src="../../cordova.js"></script> -->
-
 </body>
 
 </html>

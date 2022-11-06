@@ -7,29 +7,29 @@
 	<link rel="stylesheet" href="../../jquery/jquery.mobile-1.4.5.min.css">
 	<script type="text/javascript" src="../../jquery/jquery-2.2.3.min.js"></script>
 	<script type="text/javascript" src="../../jquery/jquery.mobile-1.4.5.min.js"></script>
-	<title>Menu principal</title>
+	<title>Menu cliente</title>
 </head>
 <!-- Cuerpo -->
 
-<body>
+<body onload="obtenerUsuario()">
 	<div id="pgMenu" data-role="page">
 		<div data-role="header">
-			<h1>Menú principal</h1>
+			<h1>Menú cliente</h1>
 		</div>
 		<div data-role="main" class="ui-content">
 			<form style="text-align: center; margin: auto;">
 				<label id="lbPeso">Peso:</label>
 				<input type="text" id="inPeso" value="">
-
+				<br>
 				<label id="lbOrigen">Origen:</label>
 				<input type="text" id="inOrigen" value="">
-
+				<br>
 				<label id="lbDestino">Destino:</label>
 				<input type="text" id="inDestino" value="">
+				<br><br><br>
 			</form>
 			<div id="div_lyBotones" style="text-align: center; margin: auto;">
-				<button id="btCrearPedido" class="ui-btn">Crear Pedido</button>
-				<button id="btActualizarDatos" class="ui-btn">Actualizar Datos</button>
+				<button id="btCrearPedido" class="ui-btn">Crear Pedido</button><br>
 				<button id="btRetornar" class="ui-btn">Retornar</button>
 			</div>
 		</div>

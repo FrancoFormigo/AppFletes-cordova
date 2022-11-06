@@ -32,28 +32,6 @@ function obtenerNombreUsuario(dni) {
 	}
 }
 
-function obtenerRolUsuario(dni) {
-	//Crea una instancia de DtoUsuario para transportar su informacion
-	var usu_ingreso = new DtoUsuario();
-	//Asigna el dni recibido como parametro al objeto creado	
-	usu_ingreso.setRol = dni;
-	//Define una variable para recibir la respuesta de la lectura	
-	var resp_leer_usuario = "";
-	//Llama a la "dao" para que acceda al webservice 
-	//Envia el objeto de tipo DtoUsuario como parametro y recibe una String
-	resp_leer_usuario = leer_por_dni(usu_ingreso);
-	//Si no se pudo conectar retorna "4"
-	if (resp_leer_usuario == "er") {
-		return "4";
-	}
-	//Si no se pudo leer retorna "1"
-	if (resp_leer_usuario != "ok") {
-		return "1";
-	} else {
-		return usu_ingreso.getRol;
-	}
-}
-
 // Funcion destinada a validar los datos ingresados, verificar
 // si la contraseña actual es correcta y en caso de todo estar
 // de acuerdo a la logica de negocio establecida modifica los datos.

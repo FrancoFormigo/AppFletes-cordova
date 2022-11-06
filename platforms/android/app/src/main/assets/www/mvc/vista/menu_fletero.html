@@ -1,58 +1,55 @@
-﻿<!-- Esta ventana es la correspondiente al menu de opciones del sistema
-	 Dado que esta aplicacion es solo un ejemplo de ingreso y creacion
-	 de usuarios no contendra las opciones propias del sistema.
--->
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-<!-- Cabecera -->
 
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-	<!-- Archivos de cordova, jquery y jquery mobile incluidos antes del body para que tome los estilos
-	 desde que se arranca la vista-->
+	<link rel="stylesheet" href="../../estilos/style.css">
 	<link rel="stylesheet" href="../../jquery/jquery.mobile-1.4.5.min.css">
 	<script type="text/javascript" src="../../jquery/jquery-2.2.3.min.js"></script>
 	<script type="text/javascript" src="../../jquery/jquery.mobile-1.4.5.min.js"></script>
-	<script type="text/javascript" src="../../cordova.js"></script>
-	<title>Menu principal</title>
+	<title>Menu fletero</title>
 </head>
-<!-- Cuerpo -->
 
-<body onload="inicializarVentana()">
-	<div data-role="page" id="pgMenu">
-		<div data-role="header">
-			<h1>Menú principal</h1>
-			<h1 id="h1Usuario"></h1>
+<body onload="listarPedidos()">
+	<div data-role="page" class="page" id="pgMenu">
+		<div class="nav-bar">
+			<h1>Menú fletero</h1>
+		</div>
+		<div class="ly-menu">
+			<button id="btListarPedidosClientes" class="ui-btn">Pedidos de Clientes</button>
+			<div class="t-container">
+				<div class="t-head">
+					<table class="t-pedidos">
+						<thead>
+							<tr class="r-head">
+								<th class="c-head c1" id="clPedido"> Pedido </th>
+								<th class="c-head c2" id="clOrigen"> Origen </th>
+								<th class="c-head c3" id="clDestino"> Destino </th>
+								<th class="c-head c4" id="clPeso"> Peso </th>
+								<th class="c-head c5" id="clTelefono"> Telefono </th>
+								<th class="c-head c6" id="clConfirmar"> Aceptar </th>
+							</tr>
+						</thead>
+						<div class="t-body">
+							<tbody id="res">
+							</tbody>
+						</div>
+					</table>
+				</div>
+
+			</div>
 		</div>
 		<div data-role="main" class="ui-content">
-			<br />
-			<div id="div_lyBotones">
-				<form style="text-align: center; margin: auto;">
-				<label id="lbPeso">Peso:</label>
-                <input type="text" id="inPeso" value="">
-				<br />
-				<label id="lbOrigen">Origen:</label>
-                <input type="text" id="inOrigen" value="">
-				<br />
-				<label id="lbContrasena">Destino:</label>
-                <input type="text" id="inDestino" value="">
-				<br />
-				</form>
-				<button class="ui-btn" id="btCrearPedido">Crear Pedido</button>
-				<br />
-				<button class="ui-btn" id="btActualizarDatos">Actualizar Datos</button>
-				<br />
-				<button class="ui-btn" id="btRetornar">Retornar</button>
-			</div>
+			<button class="ui-btn" id="btRetornar">Retornar</button>
 		</div>
 	</div>
 	<!-- Archivos correspondientes al controlador y modelo -->
-	<script type="text/javascript" src="../controlador/menu_sistema.js"></script>
-	<script type="text/javascript" src="../modelo/negocio/neg_menu_sistema.js"></script>
-	<script type="text/javascript" src="../modelo/dto/dto_usuario_rol.js"></script>
-	<script type="text/javascript" src="../modelo/dao/dao_usuario_rol.js"></script>
+	<script type="text/javascript" src="../controlador/menu_fletero.js"></script>
+	<script type="text/javascript" src="../modelo/negocio/neg_menu_fletero.js"></script>
+	<script type="text/javascript" src="../modelo/dao/dao_usuario.js"></script>
+	<script type="text/javascript" src="../modelo/dao/dao_pedido.js"></script>
+	<script type="text/javascript" src="../modelo/dto/dto_pedido.js"></script>
 </body>
 
 </html>
