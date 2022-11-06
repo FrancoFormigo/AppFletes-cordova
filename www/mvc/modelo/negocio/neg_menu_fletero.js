@@ -61,13 +61,9 @@ function obtenerPedidos() {
 	var respuesta = obtenerPedidosClientes();
 	//	alert (resp_leer_roles);
 	//Si no se pudo conectar retorna "4"
-	if (respuesta['estado'] == "er") {
+	if (respuesta == "er") {
 		return "4";
-	}
-	//Si no se pudo leer retorna "1"
-	if (respuesta['estado'] != "ok") {
-		return "1";
-	} else {
+	}else {
 		alert("Estoy en obtener pedidos NEGOCIO volviendo de dao");
 		return respuesta;
 	}

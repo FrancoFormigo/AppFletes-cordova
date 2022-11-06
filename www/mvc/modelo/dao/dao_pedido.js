@@ -95,7 +95,7 @@ function leer_pedidos_de_cliente(dtoCliente) {
 
 
             },
-            error: function (jqXHR, textStatus, errorMessage) {
+            error: function (jqXHR, textStatus) {
                 respuestaNoRecibida(jqXHR, textStatus);
                 resp_leer_usuario = "er";
             }
@@ -107,21 +107,40 @@ function leer_pedidos_de_cliente(dtoCliente) {
 function obtenerPedidosClientes(){
     //Invoca a la url donde se encuentra el archivo "usuario_leer_por_dni.php"
     $.ajax({
-        type: 'get',
+        type: 'POST',
         dataType: 'json',
         async: false,
-        url: 'https://proyectos-franco.000webhostapp.com/Usuarios/usuario_leer_por_dni.php',
+        url: 'https://proyectos-franco.000webhostapp.com/Usuarios/fletero_listar_ofertas.php',
         success: function (respuesta) {
-            resp_obtener_pedidos_clientes = respuesta;
             //Completa la informacion del DTO con la respuesta del servidor
+            /*
+            dtoPedido.setId = respuesta['Id'];
+            dtoPedido.setPeso = respuesta['Peso'];
+            dtoPedido.setOrigen = respuesta['Origen'];
+            dtoPedido.setDestino = respuesta['Destino'];
+            dtoPedido.setTelefono = respuesta['Telefono'];
+            */
+           /*
+            listaPedidos = [];
+            respuesta.forEach((pedido) => {
+                dtoPedido.setId = pedido.ID;
+                dtoPedido.setPeso = pedido.Peso;
+                dtoPedido.setOrigen = pedido.Origen;
+                dtoPedido.setDestino = pedido.Destino;
+                dtoPedido.setTelefono = pedido.Telefono;
+                listaPedidos.push(dtoPedido)
+            });
+            */
+            resp_obtener_pedidos_clientes = respuesta;
         },
-        error: function (jqXHR, textStatus, errorMessage) {
+        error: function (jqXHR, textStatus) {
             respuestaNoRecibida(jqXHR, textStatus);
-            resp_leer_usuario = "er";
+            resp_obtener_pedidos_clientes = "er";
         }
     });
-    alert("Estoy en obtener pedidos clientes DAO");
-    var prueba = [{"estado":"" ,"Id":"1","Origen":"4 de enero 222","Destino":"San Martin 555","Peso":"32","Telefono":"33434343434"},{"estado":"" ,"Id":"2","Origen":"Mendoza 222","Destino":"Hipolito 555","Peso":"51","Telefono":"003402321243"}]
-    return prueba;
+    //alert("Estoy en obtener pedidos clientes DAO");
+    //var prueba = [{"estado":"" ,"Id":"1","Origen":"4 de enero 222","Destino":"San Martin 555","Peso":"32","Telefono":"33434343434"},{"estado":"" ,"Id":"2","Origen":"Mendoza 222","Destino":"Hipolito 555","Peso":"51","Telefono":"003402321243"}]
+    //return prueba;
     //return resp_obtener_pedidos_clientes;
+    return resp_obtener_pedidos_clientes;
 }

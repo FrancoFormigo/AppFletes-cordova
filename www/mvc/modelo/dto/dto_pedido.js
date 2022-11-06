@@ -6,11 +6,13 @@
 // 
 class DtoPedido {
     constructor(setId = 0, setPeso = 0,
-        setOrigen = '', setDestino = '',) {
+        setOrigen = '', setDestino = '', setTelefono = '', setFletero = '') {
         this.id = setId;
         this.peso = setPeso;
         this.origen = setOrigen;
         this.destino = setDestino;
+        this.telefono = setTelefono;
+        this.Fletero = setFletero;
     }
 
     set setId(id) {
@@ -33,6 +35,10 @@ class DtoPedido {
         this.fletero = fletero;
     }
 
+    set setTelefono(telefono){
+        this.telefono = telefono;
+    }
+
     get getFletero() {
         return this.fletero;
     }
@@ -51,6 +57,10 @@ class DtoPedido {
 
     get getDestino() {
         return this.destino;
+    }
+
+    get getTelefono() {
+        return this.telefono;
     }
 
 }

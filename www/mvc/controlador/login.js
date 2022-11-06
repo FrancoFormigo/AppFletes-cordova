@@ -34,11 +34,9 @@ $('#btIngresar').click(function () {
         } else {
             if (res_validar_ingreso == "5") {
                 window.location.href = '../vista/menu_fletero.html?usuario=' + usuario;
-            }
-            if (res_validar_ingreso == "3") {
+            } else if (res_validar_ingreso == "3") {
                 window.location.href = '../vista/menu_cliente.html?usuario=' + usuario;
-            }
-            else { alert("Error!"); }
+            } else { alert("Error!"); }
         }
     }
 });

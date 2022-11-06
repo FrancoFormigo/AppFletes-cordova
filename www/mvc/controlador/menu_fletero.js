@@ -3,7 +3,7 @@
 // del sistema
 
 //Estilos datos por jquery a un objeto de la vista
-document.getElementById('diRol').align = "center";
+//document.getElementById('diRol').align = "center";
 // Definicion de variables globales
 var dni_logueado = "";
 var idUsuario = "";
@@ -77,12 +77,76 @@ function getParameterByName(name) {
 
 // Funcion que se ejecuta al abrirse la ventana
 // obtiene el dni  y el id del get
-function obtenerUsuario() {
+/*function obtenerUsuario() {
 	dni_logueado = getParameterByName('usuario');
 	idUsuario = getParameterByName('id');
-} diRol
+} diRol*/
 
+
+//document.getElementById('#btListarPedidosClientes').addEventListener('click', listarPedidos);
+
+function recorrerLista(pedido){
+
+	var mHTML='<table class="table">';
+		mHTML+=
+			'<tr><td>'+pedido.ID+'</td></tr>'+
+			'<tr><td>'+pedido.Origen+'</td></tr>'+
+			'<tr><td>'+pedido.Destino+'</td></tr>'+
+			'<tr><td>'+pedido.Peso+'</td><td>'+
+			'<tr><td>'+pedido.Telefono+'</td></tr>';
+	document.getElementById('res').innerHTML = mHTML;
+	}
+
+function pasarLista(pedido) {
+    console.log(`${pedido.Id} ${pedido.Origen} ${pedido.Destino} ${pedido.Telefono}`);
+}
+
+function listarPedidos() {
+	var lista = obtenerPedidos();
+	alert(lista);
+    lista.forEach((pedido) => pasarLista(pedido));
+    
+}
+
+
+/*
 document.querySelector('#btListarPedidosClientes').addEventListener('click', listarPedidos);
+function listarPedidos(){
+	const res_obtener_pedidos = obtenerPedidos();
+
+	res_obtener_pedidos.onreadystatechange = function(){
+		let pedidos = res_obtener_pedidos;
+
+		let res = document.querySelector('#res');
+		res.innerHTML = '';
+
+		for (item in pedidos){
+			res.innerHTML += `
+				<tr>
+					<td id="fiPedido">${item.Id}</td>
+					<td id="fiOrigen">${item.Origen}</td>
+					<td id="fiDestino">${item.Destino}</td>
+					<td id="fiPeso">${item.Peso}</td>
+					<td id="fiTelefono">${item.Telefono}</td>
+					<td id="" style="background-color: green;"><button></button></td>
+				</tr>
+			`
+			res.innerHTML += `
+				<tr>
+					<td id="fiPedido">1</td>
+					<td id="fiOrigen">2222</td>
+					<td id="fiDestino">44</td>
+					<td id="fiPeso">gggg</td>
+					<td id="fiTelefono">hhhh</td>
+					<td id="" style="background-color: green;"><button></button></td>
+				</tr>
+			`
+		}
+	}
+}
+*/
+
+/*
 function listarPedidos(){
 	const res_obtener_pedidos = obtenerPedidos();
 
@@ -106,4 +170,4 @@ function listarPedidos(){
 		}
 	}
 
-}
+}*/
